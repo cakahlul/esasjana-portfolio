@@ -1,0 +1,82 @@
+---
+title: "Modern CSS Techniques Every Developer Should Know"
+description: "From container queries to CSS nesting — a roundup of modern CSS features that simplify styling and reduce JavaScript dependency."
+date: "2026-04-05"
+tags: ["CSS", "Web Development", "Frontend"]
+---
+
+## CSS has evolved
+
+Modern CSS is incredibly powerful. Many patterns that once required JavaScript or preprocessors are now native to the platform.
+
+## Container queries
+
+Container queries let you style elements based on their parent's size, not the viewport:
+
+```css
+.card-container {
+  container-type: inline-size;
+}
+
+@container (min-width: 400px) {
+  .card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+```
+
+## CSS nesting
+
+No more Sass just for nesting — it's native now:
+
+```css
+.nav {
+  display: flex;
+
+  & a {
+    color: var(--foreground);
+    text-decoration: none;
+
+    &:hover {
+      color: var(--primary);
+    }
+  }
+}
+```
+
+## The `:has()` selector
+
+The "parent selector" CSS developers have wanted for years:
+
+```css
+/* Style a card differently when it contains an image */
+.card:has(img) {
+  padding: 0;
+}
+
+/* Style a form group when its input is invalid */
+.form-group:has(:invalid) {
+  border-color: red;
+}
+```
+
+## CSS custom properties for theming
+
+Using HSL with CSS variables enables flexible theming:
+
+```css
+:root {
+  --primary: 240 5.9% 10%;
+}
+
+.dark {
+  --primary: 0 0% 98%;
+}
+```
+
+This approach pairs perfectly with Tailwind CSS's utility classes and makes dark mode trivial to implement.
+
+## Wrapping up
+
+These features are supported in all modern browsers. Start using them today — your stylesheets will thank you.
