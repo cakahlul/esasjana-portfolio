@@ -1,0 +1,46 @@
+---
+title: "Building My Portfolio with Next.js 15 and React 19"
+description: "A deep dive into the tech stack and design decisions behind this portfolio — from animation strategy to content pipeline."
+date: "2026-04-10"
+tags: ["Next.js", "React", "Portfolio", "Web Development"]
+---
+
+## Why I rebuilt my portfolio
+
+Every developer needs a space to showcase their work, share ideas, and experiment with new technologies. I decided to rebuild my portfolio from scratch using the latest tools in the React ecosystem.
+
+## The tech stack
+
+Here's what powers this site:
+
+- **Next.js 15** with App Router and React Server Components
+- **React 19** with the new `use` hook and Server Actions
+- **Tailwind CSS** for utility-first styling with CSS variable tokens
+- **Framer Motion** for scroll-driven animations and page transitions
+- **MDX** for blog posts with syntax highlighting via Shiki
+
+## Design principles
+
+I wanted the site to feel _bold_ and animated while remaining **fast to load**. The key principles:
+
+1. Server Components by default — only interactive bits are client-side
+2. Dynamic imports for heavy dependencies like Three.js
+3. Respect `prefers-reduced-motion` everywhere
+4. Target < 150KB initial JS on the home page
+
+## Code example
+
+Here's how the `cn` utility works for merging Tailwind classes:
+
+```typescript
+import { type ClassValue, clsx } from 'clsx'
+import { twMerge } from 'tailwind-merge'
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs))
+}
+```
+
+## What's next
+
+I'll be adding more projects, refining the animations, and writing about the things I learn along the way. Stay tuned!
