@@ -9,7 +9,7 @@ export default function Error({
   reset: () => void
 }) {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center px-4 text-center">
+    <main className="flex min-h-[calc(100vh-14rem)] flex-col items-center justify-center px-4 text-center">
       <h1 className="text-4xl font-bold tracking-tighter">
         Something went wrong
       </h1>

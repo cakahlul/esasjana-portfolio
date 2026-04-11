@@ -2,6 +2,9 @@ import type { Metadata } from 'next'
 import { GeistSans } from 'geist/font/sans'
 import { GeistMono } from 'geist/font/mono'
 import { ThemeProvider } from '@/components/layout/ThemeProvider'
+import { Nav } from '@/components/layout/Nav'
+import { Footer } from '@/components/layout/Footer'
+import { CommandPalette } from '@/components/layout/CommandPalette'
 import { siteConfig } from '@/lib/data/site'
 import './globals.css'
 
@@ -47,7 +50,12 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <div className="flex min-h-screen flex-col">
+            <Nav />
+            <div className="flex-1">{children}</div>
+            <Footer />
+          </div>
+          <CommandPalette />
         </ThemeProvider>
       </body>
     </html>

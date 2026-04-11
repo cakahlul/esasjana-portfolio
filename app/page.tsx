@@ -36,7 +36,7 @@ const sections = [
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center px-4">
+    <main className="flex min-h-[calc(100vh-14rem)] flex-col items-center justify-center px-4 py-16">
       <div className="mx-auto max-w-2xl space-y-8 text-center">
         <div className="space-y-4">
           <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
